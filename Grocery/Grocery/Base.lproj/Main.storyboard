@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Grocery Table View Controller-->
+        <!--Grocery List-->
         <scene sceneID="3y6-en-Gfp">
             <objects>
                 <tableViewController id="dxE-SJ-cXm" customClass="GroceryTableViewController" customModule="Grocery" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="dxE-SJ-cXm" id="3tQ-zA-dW9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gh8-AD-YMf">
+                    <navigationItem key="navigationItem" title="Grocery List" id="Gh8-AD-YMf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7p3-GA-RgJ">
                             <connections>
                                 <action selector="addAction:" destination="dxE-SJ-cXm" id="5Qr-o0-7WX"/>

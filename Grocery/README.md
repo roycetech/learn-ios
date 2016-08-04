@@ -1,5 +1,11 @@
 Project Features:
 -----------------
 
-GroceryTableViewController.addAction
-- Input via alert
+- CoreData persistence.
+
+
+Notable Codes:
+--------------
+
+- GroceryTableViewController.addAction
+  - Input via alert

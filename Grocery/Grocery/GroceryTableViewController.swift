@@ -7,16 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
 class GroceryTableViewController: UITableViewController {
 
     
-  var groceries = [String]()
+    var groceries = [NSManagedObject]()
+    var managedObjectContext: NSManagedObjectContext!
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        managedObjectContext = appDelegate.managedObjectContext
     }
   
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
+    }
+    
+    func loadData() {
+        let request = NSFetchRequest(entityName: "Grocery");
+        
+        do {
+            let results = try managedObjectContext.executeFetchRequest(request)
+            groceries = results as! [NSManagedObject]
+            tableView.reloadData()
+        } catch {
+            fatalError("Error in retrieving grocery items!")
+        }
+    }
   
     @IBAction func addAction(sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Grocery List", message: "Add Item", preferredStyle: UIAlertControllerStyle.Alert)
@@ -27,8 +49,20 @@ class GroceryTableViewController: UITableViewController {
         let addAction = UIAlertAction(title: "Add", style: UIAlertActionStyle.Default) {
             (action) -> Void in
             let textField = alertController.textFields?.first
-            self.groceries.append(textField!.text!)
-            self.tableView.reloadData()
+            
+            let entity = NSEntityDescription.entityForName("Grocery", inManagedObjectContext: self.managedObjectContext)
+            
+            let grocery = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext)
+            
+            grocery.setValue(textField?.text, forKey: "item")
+            
+            do {
+                try self.managedObjectContext.save()
+            } catch {
+                fatalError("Error in saving to Core Data!")
+            }
+            
+            self.loadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default) { (action: UIAlertAction) in
         }
@@ -55,8 +89,14 @@ class GroceryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-        cell?.textLabel?.text = groceries[indexPath.row]
+//        cell?.textLabel?.text = groceries[indexPath.row]
+        let grocery = groceries[indexPath.row]
+        cell?.textLabel!.text = grocery.valueForKey("item") as? String
+        
+        
+        
         return cell!
     }
 
