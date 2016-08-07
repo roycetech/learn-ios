@@ -16,6 +16,14 @@
 		F11961F01D56CC98004F40D6 /* House_ReportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11961EF1D56CC98004F40D6 /* House_ReportUITests.swift */; };
 		F11961FE1D56D4F2004F40D6 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11961FD1D56D4F2004F40D6 /* CoreData.swift */; };
 		F11962011D56D536004F40D6 /* House Report.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F11961FF1D56D536004F40D6 /* House Report.xcdatamodeld */; };
+		F119621A1D56DDF1004F40D6 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962121D56DDF1004F40D6 /* Location+CoreDataProperties.swift */; };
+		F119621B1D56DDF1004F40D6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962131D56DDF1004F40D6 /* Location.swift */; };
+		F119621E1D56DDF1004F40D6 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962161D56DDF1004F40D6 /* Status+CoreDataProperties.swift */; };
+		F119621F1D56DDF1004F40D6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962171D56DDF1004F40D6 /* Status.swift */; };
+		F11962201D56DDF1004F40D6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962181D56DDF1004F40D6 /* Category+CoreDataProperties.swift */; };
+		F11962211D56DDF1004F40D6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962191D56DDF1004F40D6 /* Category.swift */; };
+		F11962241D56DED4004F40D6 /* House+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962221D56DED4004F40D6 /* House+CoreDataProperties.swift */; };
+		F11962251D56DED4004F40D6 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962231D56DED4004F40D6 /* House.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		F11961F11D56CC98004F40D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F11961FD1D56D4F2004F40D6 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F11962001D56D536004F40D6 /* House Report.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "House Report.xcdatamodel"; sourceTree = "<group>"; };
+		F11962121D56DDF1004F40D6 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F11962131D56DDF1004F40D6 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F11962161D56DDF1004F40D6 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F11962171D56DDF1004F40D6 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		F11962181D56DDF1004F40D6 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F11962191D56DDF1004F40D6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F11962221D56DED4004F40D6 /* House+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "House+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F11962231D56DED4004F40D6 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +119,14 @@
 		F11961CB1D56CC98004F40D6 /* House Report */ = {
 			isa = PBXGroup;
 			children = (
+				F11962221D56DED4004F40D6 /* House+CoreDataProperties.swift */,
+				F11962231D56DED4004F40D6 /* House.swift */,
+				F11962121D56DDF1004F40D6 /* Location+CoreDataProperties.swift */,
+				F11962131D56DDF1004F40D6 /* Location.swift */,
+				F11962161D56DDF1004F40D6 /* Status+CoreDataProperties.swift */,
+				F11962171D56DDF1004F40D6 /* Status.swift */,
+				F11962181D56DDF1004F40D6 /* Category+CoreDataProperties.swift */,
+				F11962191D56DDF1004F40D6 /* Category.swift */,
 				F11961CC1D56CC98004F40D6 /* AppDelegate.swift */,
 				F11961CE1D56CC98004F40D6 /* ViewController.swift */,
 				F11961D01D56CC98004F40D6 /* Main.storyboard */,
@@ -265,9 +289,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11961FE1D56D4F2004F40D6 /* CoreData.swift in Sources */,
+				F119621F1D56DDF1004F40D6 /* Status.swift in Sources */,
 				F11962011D56D536004F40D6 /* House Report.xcdatamodeld in Sources */,
 				F11961CF1D56CC98004F40D6 /* ViewController.swift in Sources */,
+				F119621E1D56DDF1004F40D6 /* Status+CoreDataProperties.swift in Sources */,
+				F11962201D56DDF1004F40D6 /* Category+CoreDataProperties.swift in Sources */,
 				F11961CD1D56CC98004F40D6 /* AppDelegate.swift in Sources */,
+				F119621B1D56DDF1004F40D6 /* Location.swift in Sources */,
+				F119621A1D56DDF1004F40D6 /* Location+CoreDataProperties.swift in Sources */,
+				F11962241D56DED4004F40D6 /* House+CoreDataProperties.swift in Sources */,
+				F11962251D56DED4004F40D6 /* House.swift in Sources */,
+				F11962211D56DDF1004F40D6 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +524,7 @@
 				F11961F61D56CC98004F40D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F11961F71D56CC98004F40D6 /* Build configuration list for PBXNativeTarget "House ReportTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +533,7 @@
 				F11961F91D56CC98004F40D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F11961FA1D56CC98004F40D6 /* Build configuration list for PBXNativeTarget "House ReportUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +542,7 @@
 				F11961FC1D56CC98004F40D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
