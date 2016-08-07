@@ -12,7 +12,7 @@ import CoreData
 class GroceryTableViewController: UITableViewController {
 
     
-    var groceries = [NSManagedObject]()
+    var groceries = [Grocery]()
     var managedObjectContext: NSManagedObjectContext!
     
   
@@ -33,7 +33,7 @@ class GroceryTableViewController: UITableViewController {
         
         do {
             let results = try managedObjectContext.executeFetchRequest(request)
-            groceries = results as! [NSManagedObject]
+            groceries = results as! [Grocery]
             tableView.reloadData()
         } catch {
             fatalError("Error in retrieving grocery items!")
@@ -50,11 +50,8 @@ class GroceryTableViewController: UITableViewController {
             (action) -> Void in
             let textField = alertController.textFields?.first
             
-            let entity = NSEntityDescription.entityForName("Grocery", inManagedObjectContext: self.managedObjectContext)
-            
-            let grocery = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext)
-            
-            grocery.setValue(textField?.text, forKey: "item")
+            let grocery = NSEntityDescription.insertNewObjectForEntityForName("Grocery", inManagedObjectContext: self.managedObjectContext) as! Grocery
+            grocery.item = textField?.text
             
             do {
                 try self.managedObjectContext.save()
@@ -91,11 +88,8 @@ class GroceryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
-//        cell?.textLabel?.text = groceries[indexPath.row]
         let grocery = groceries[indexPath.row]
-        cell?.textLabel!.text = grocery.valueForKey("item") as? String
-        
-        
+        cell?.textLabel!.text = grocery.item
         
         return cell!
     }

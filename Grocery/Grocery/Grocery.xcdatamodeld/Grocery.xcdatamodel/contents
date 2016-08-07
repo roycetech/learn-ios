@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
-    <entity name="Grocery" syncable="YES">
+    <entity name="Grocery" representedClassName=".Grocery" syncable="YES">
         <attribute name="item" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>

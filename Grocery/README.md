@@ -9,3 +9,4 @@ Notable Codes:
 
 - GroceryTableViewController.addAction
   - Input via alert
+- NSManagedObject subclass
