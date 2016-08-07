@@ -15,6 +15,6 @@ import CoreData
 extension Status {
 
     @NSManaged var isForSale: NSNumber?
-    @NSManaged var house: Home?
+    @NSManaged var house: House?
 
 }

@@ -15,6 +15,6 @@ import CoreData
 extension Category {
 
     @NSManaged var houseType: String?
-    @NSManaged var house: Home?
+    @NSManaged var house: House?
 
 }

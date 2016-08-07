@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    checkDataStore()
+    
     return true
   }
 
@@ -42,6 +46,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
   }
+    
+    func checkDataStore() {
+        let coreData = CoreData()
+        let request = NSFetchRequest(entityName: "House")
+        let houseCount = coreData.managedObjectContext.countForFetchRequest(request, error: nil)
+        
+        print("Total house: \(houseCount)")
+        if houseCount == 0 {
+            uploadSampleData()
+        }
+    }
+    
+    func uploadSampleData() {
+        let coreData = CoreData()
+        let url = NSBundle.mainBundle().URLForResource("sample", withExtension: "json")
+        let data = NSData(contentsOfURL: url!)
+        
+        do {
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+            let jsonArray = jsonResult.valueForKey("house") as! NSArray
+            
+            for json in jsonArray {
+                let house = NSEntityDescription.insertNewObjectForEntityForName("House", inManagedObjectContext: coreData.managedObjectContext) as! House
+                house.bgy = json["bgy"] as? String
+                house.price = json["price"] as? NSNumber
+                house.bed = json["bed"] as? NSNumber
+                house.bath = json["bath"] as? NSNumber
+                house.sqrm = json["sqrm"] as? NSNumber
+                
+                let category = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: coreData.managedObjectContext) as! Category
+                category.houseType = (json["category"] as! NSDictionary)["houseType"] as? String
+                house.category = category
+                
+                let status = NSEntityDescription.insertNewObjectForEntityForName("Status", inManagedObjectContext: coreData.managedObjectContext) as! Status
+                let isForSale = (json["status"] as! NSDictionary)["isForRent"] as! Bool
+                status.isForSale = NSNumber(bool: isForSale)
+                house.status = status
+                
+                let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: coreData.managedObjectContext) as! Location
+                location.city = json["city"] as? String
+                house.location = location
+                
+                let imageName = json["image"] as? String
+                let image = UIImage(named: imageName!)
+                let imageData = UIImageJPEGRepresentation(image!, 1.0)
+                house.image = imageData
+            }
+            coreData.saveContext()
+            
+            let request = NSFetchRequest(entityName: "House")
+            let houseCount = coreData.managedObjectContext.countForFetchRequest(request, error: nil)
+
+            print("Total house: \(houseCount)")
+        } catch {
+            fatalError("Error in reading data.")
+        }
+        
+        
+    }
 
 }
 
