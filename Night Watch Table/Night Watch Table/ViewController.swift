@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var dailyTasks = [
         Task(name: "Check Email", type: .Daily, done: true, lastDone: nil),
         Task(name: "Give nursery a bath", type: .Daily, done: false, lastDone: nil),
@@ -141,5 +144,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
+    
+    @IBAction func resetList(sender: UIBarButtonItem) {
+        
+        for i in 0..<dailyTasks.count {
+            dailyTasks[i].done = false
+        }
+    
+        for i in 0..<weeklyTasks.count {
+            weeklyTasks[i].done = false
+        }
+        
+        for i in 0..<biWeeklyTasks.count {
+            biWeeklyTasks[i].done = false
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
 
 }

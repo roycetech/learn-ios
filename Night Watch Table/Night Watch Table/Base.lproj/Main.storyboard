@@ -40,6 +40,12 @@
                                         </switch>
                                     </barButtonItem>
                                     <barButtonItem enabled="NO" title="dark mode" id="Jx5-dL-a7B"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Tht-3u-mCu"/>
+                                    <barButtonItem title="Reset" id="0G4-VE-zcG">
+                                        <connections>
+                                            <action selector="resetList:" destination="BYZ-38-t0r" id="yM1-2T-FH4"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -54,6 +60,9 @@
                             <constraint firstItem="M6l-p7-SKT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wxF-nW-qFh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="M6l-p7-SKT" id="XCK-12-fwb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
