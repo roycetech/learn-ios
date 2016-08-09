@@ -3,6 +3,7 @@ Project Features:
 
 - UITableView
 - Night Mode
+- Alert confirmation
 
 
 Notable Code Features:
