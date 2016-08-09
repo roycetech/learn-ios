@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1061AE71D5961E700080F6F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = F1061AE61D5961E700080F6F /* README.md */; };
+		F1061AEB1D59699200080F6F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1061AEA1D59699200080F6F /* Task.swift */; };
 		F1C3A3071D5863160025668A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3A3061D5863160025668A /* AppDelegate.swift */; };
 		F1C3A3091D5863160025668A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C3A3081D5863160025668A /* ViewController.swift */; };
 		F1C3A30C1D5863160025668A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C3A30A1D5863160025668A /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		F1061AE61D5961E700080F6F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F1061AEA1D59699200080F6F /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F1C3A3031D5863160025668A /* Night Watch Table.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Night Watch Table.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C3A3061D5863160025668A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C3A3081D5863160025668A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		F1C3A3051D5863160025668A /* Night Watch Table */ = {
 			isa = PBXGroup;
 			children = (
+				F1061AEA1D59699200080F6F /* Task.swift */,
 				F1C3A3061D5863160025668A /* AppDelegate.swift */,
 				F1C3A3081D5863160025668A /* ViewController.swift */,
 				F1C3A30A1D5863160025668A /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1061AEB1D59699200080F6F /* Task.swift in Sources */,
 				F1061AE71D5961E700080F6F /* README.md in Sources */,
 				F1C3A3091D5863160025668A /* ViewController.swift in Sources */,
 				F1C3A3071D5863160025668A /* AppDelegate.swift in Sources */,

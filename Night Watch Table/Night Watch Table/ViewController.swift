@@ -11,24 +11,24 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
-    let dailyTasks = [
-        "Feed the baby",
-        "Give nursery a bath",
-        "Serve food to masters",
-        "Empty garbage bins",
-        "Refill ice containers"
+    var dailyTasks = [
+        Task(name: "Check Email", type: .Daily, done: true, lastDone: nil),
+        Task(name: "Give nursery a bath", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Clean playroom", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Empty garbage bins", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Refill ice containers", type: .Daily, done: false, lastDone: nil)
     ]
     
-    let weeklyTasks = [
-        "Check supply of milk",
-        "Check supply of diapers",
-        "Do routine checkup"
+    var weeklyTasks = [
+        Task(name: "Check supply of milk", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Check supply of diapers", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Do routine checkup", type: .Daily, done: false, lastDone: nil)
     ]
     
-    let biWeeklyTasks = [
-        "See the doctor",
-        "Check school report",
-        "Have a funtime at outside"
+    var biWeeklyTasks = [
+        Task(name: "See the doctor", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Check school report", type: .Daily, done: false, lastDone: nil),
+        Task(name: "Have a funtime at outside", type: .Daily, done: false, lastDone: nil)
     ]
     
     
@@ -47,12 +47,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -60,40 +58,74 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 3
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
+    func getTask(index: Int) -> [Task] {
+        switch index {
         case 0:
-            return dailyTasks.count
+            return dailyTasks
         case 1:
-            return weeklyTasks.count
+            return weeklyTasks
         case 2:
-            return biWeeklyTasks.count
+            return biWeeklyTasks
         default:
-            return 0
+            fatalError("System Error")
         }
+    }
+    
+    /** 
+     Use this to modify the instance array.
+     */
+    func getTaskReference(index: Int, f:(inout [Task]) -> Void) {
+        switch index {
+        case 0:
+            return f(&dailyTasks)
+        case 1:
+            return f(&weeklyTasks)
+        case 2:
+            return f(&biWeeklyTasks)
+        default:
+            fatalError("System Error")
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return getTask(section).count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var currentTask: String
-        switch indexPath.section {
-        case 0:
-            currentTask = dailyTasks[indexPath.row]
-        case 1:
-            currentTask =  weeklyTasks[indexPath.row]
-        case 2:
-            currentTask =  biWeeklyTasks[indexPath.row]
-        default:
-            currentTask = ""
+    
+        let currentTask = getTask(indexPath.section)[indexPath.row]
+        let cell = UITableViewCell()
+        cell.textLabel!.text = currentTask.name
+        
+        if currentTask.done {
+            cell.textLabel?.textColor = UIColor.lightGrayColor()
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.textLabel?.textColor = UIColor.blackColor()
+            cell.accessoryType = .None
         }
         
-        let cell = UITableViewCell()
-        cell.textLabel!.text = currentTask
         cell.backgroundColor = UIColor.clearColor()
         return cell
     }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let action = UITableViewRowAction(style: .Default, title: "Done") { (action, indexPath) in
+            var task = self.getTask(indexPath.section)[indexPath.row]
+            task.done = true
+            
+            self.getTaskReference(indexPath.section) {
+                (inout picked: [Task]) in
+                picked[indexPath.row].done = true
+            }
+            
+            tableView.reloadData()
+            tableView.editing = false
+        }
+        return [action]
     }
     
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
