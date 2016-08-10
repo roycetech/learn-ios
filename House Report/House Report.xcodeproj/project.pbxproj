@@ -29,6 +29,7 @@
 		F11962341D57677F004F40D6 /* FilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962331D57677F004F40D6 /* FilterTableViewController.swift */; };
 		F11962361D5767DD004F40D6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962351D5767DD004F40D6 /* FirstViewController.swift */; };
 		F11962381D576982004F40D6 /* HouseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11962371D576982004F40D6 /* HouseListTableViewCell.swift */; };
+		F11B89E81D5AC24800BA7A0F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11B89E71D5AC24800BA7A0F /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F11962331D57677F004F40D6 /* FilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewController.swift; sourceTree = "<group>"; };
 		F11962351D5767DD004F40D6 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		F11962371D576982004F40D6 /* HouseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseListTableViewCell.swift; sourceTree = "<group>"; };
+		F11B89E71D5AC24800BA7A0F /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,11 @@
 			isa = PBXGroup;
 			children = (
 				F11961D01D56CC98004F40D6 /* Main.storyboard */,
+				F11961CC1D56CC98004F40D6 /* AppDelegate.swift */,
+				F11961FD1D56D4F2004F40D6 /* CoreData.swift */,
+				F11962351D5767DD004F40D6 /* FirstViewController.swift */,
+				F11B89E71D5AC24800BA7A0F /* SecondViewController.swift */,
+				F11962331D57677F004F40D6 /* FilterTableViewController.swift */,
 				F11962261D56EA14004F40D6 /* sample.json */,
 				F11962221D56DED4004F40D6 /* House+CoreDataProperties.swift */,
 				F11962231D56DED4004F40D6 /* House.swift */,
@@ -140,16 +147,12 @@
 				F11962171D56DDF1004F40D6 /* Status.swift */,
 				F11962181D56DDF1004F40D6 /* Category+CoreDataProperties.swift */,
 				F11962191D56DDF1004F40D6 /* Category.swift */,
-				F11961CC1D56CC98004F40D6 /* AppDelegate.swift */,
 				F11961CE1D56CC98004F40D6 /* ViewController.swift */,
 				F11961D61D56CC98004F40D6 /* Assets.xcassets */,
 				F11961D81D56CC98004F40D6 /* LaunchScreen.storyboard */,
 				F11961DB1D56CC98004F40D6 /* Info.plist */,
-				F11961FD1D56D4F2004F40D6 /* CoreData.swift */,
 				F11961FF1D56D536004F40D6 /* House Report.xcdatamodeld */,
 				F11962371D576982004F40D6 /* HouseListTableViewCell.swift */,
-				F11962331D57677F004F40D6 /* FilterTableViewController.swift */,
-				F11962351D5767DD004F40D6 /* FirstViewController.swift */,
 			);
 			path = "House Report";
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11961FE1D56D4F2004F40D6 /* CoreData.swift in Sources */,
+				F11B89E81D5AC24800BA7A0F /* SecondViewController.swift in Sources */,
 				F119621F1D56DDF1004F40D6 /* Status.swift in Sources */,
 				F11962011D56D536004F40D6 /* House Report.xcdatamodeld in Sources */,
 				F11961CF1D56CC98004F40D6 /* ViewController.swift in Sources */,

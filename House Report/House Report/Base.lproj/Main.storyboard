@@ -9,7 +9,7 @@
         <!--Summary-->
         <scene sceneID="qFz-s4-RfO">
             <objects>
-                <viewController id="BfE-0b-NHi" sceneMemberID="viewController">
+                <viewController id="BfE-0b-NHi" customClass="SecondViewController" customModule="House_Report" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tgA-tT-ooC"/>
                         <viewControllerLayoutGuide type="bottom" id="qod-8C-vYD"/>
@@ -39,10 +39,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fsd-5r-aGm">
-                                <rect key="frame" x="147" y="72" width="121" height="29"/>
+                                <rect key="frame" x="141" y="72" width="133" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="For Rent"/>
+                                    <segment title="Rented"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentedAction:" destination="bkf-ut-1aM" eventType="valueChanged" id="6EG-Iz-yZH"/>
