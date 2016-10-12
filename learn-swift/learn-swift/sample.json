@@ -1,0 +1,27 @@
+{
+    "house": [{
+        "city": "Marikina",
+        "price": 15000,
+        "bed": 2,
+        "sqm": 40,
+        "image": "apartment001.jpg",
+        "category": {
+                "houseType": "Singles"
+        },
+        "status": {
+            "isForRent": true
+        }
+    }, {
+         "city": "Marikina",
+         "price": 20000,
+         "bed": 2,
+         "sqm": 50,
+         "image": "apartment001.jpg",
+         "category": {
+         "houseType": "Small Family"
+         },
+         "status": {
+         "isForRent": true
+         }
+    }]
+}
