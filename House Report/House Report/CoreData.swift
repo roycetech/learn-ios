@@ -3,7 +3,7 @@
 //  House Report
 //
 //  Created by Royce on 07/08/2016.
-//  Copyright © 2016 Ryetech. All rights reserved.
+//  Copyright © 2016 Ryetech. All rights rese                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     rved.
 //
 
 import Foundation
@@ -13,23 +13,23 @@ class CoreData {
  
     let model = "House Report"
     
-    private lazy var applicationDocumentsDirectory: NSURL = {
-        let urls  = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask)
+    fileprivate lazy var applicationDocumentsDirectory: URL = {
+        let urls  = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask)
         return urls[urls.count-1]
     }()
     
-    private lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource(self.model, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+    fileprivate lazy var managedObjectModel: NSManagedObjectModel = {
+        let modelURL = Bundle.main.url(forResource: self.model, withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
-    private lazy var persistenceStoreCoordinator: NSPersistentStoreCoordinator = {
+    fileprivate lazy var persistenceStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent(self.model)
+        let url = self.applicationDocumentsDirectory.appendingPathComponent(self.model)
         
         do {
             let options = [NSMigratePersistentStoresAutomaticallyOption: true]
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
         } catch {
             fatalError("Error adding persistence store")
         }
@@ -37,7 +37,7 @@ class CoreData {
     }()
 
     lazy var managedObjectContext: NSManagedObjectContext = {
-        var context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+        var context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
         context.persistentStoreCoordinator = self.persistenceStoreCoordinator
         return context
     }()

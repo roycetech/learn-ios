@@ -17,7 +17,7 @@ extension House {
     @NSManaged var bath: NSNumber?
     @NSManaged var bed: NSNumber?
     @NSManaged var bgy: String?
-    @NSManaged var image: NSData?
+    @NSManaged var image: Data?
     @NSManaged var price: NSNumber?
     @NSManaged var sqrm: NSNumber?
     @NSManaged var category: Category?

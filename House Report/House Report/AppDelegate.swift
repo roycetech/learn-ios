@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         injectManagedObjectContext()
@@ -46,81 +46,97 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         secondViewController.managedObjectContext = managedObjectContext        
     }
     
-    
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-    
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-    
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-    }
-    
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-    
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        // Saves changes in the application's managed object context before the application terminates.
-    }
-    
     func checkDataStore() {
         let coreData = CoreData()
-        let request = NSFetchRequest(entityName: "House")
-        let houseCount = coreData.managedObjectContext.countForFetchRequest(request, error: nil)
-        
-        print("Total house: \(houseCount)")
-        if houseCount == 0 {
-            uploadSampleData()
+        let request = NSFetchRequest<House>(entityName: "House")
+        do {
+            let houseCount = try coreData.managedObjectContext.count(for: request)
+            print("Total house: \(houseCount)")
+            if houseCount == 0 {
+                uploadSampleData()
+            }
+        } catch {
+            fatalError("Error in reading data.")
         }
     }
     
     func uploadSampleData() {
         let coreData = CoreData()
-        let url = NSBundle.mainBundle().URLForResource("sample", withExtension: "json")
-        let data = NSData(contentsOfURL: url!)
+
+        let path = Bundle.main.path(forResource: "sample", ofType: "json")
+        var data:NSData
+        let jsonResult:AnyObject
         
         do {
-            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-            let jsonArray = jsonResult.valueForKey("house") as! NSArray
+            data = try NSData(contentsOfFile: path!)
+            jsonResult = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
+        } catch {
+            fatalError("Unable to read json file!")
+        }
+
+//        
+//        let url = Bundle.main.url(forResource: "sample", withExtension: "json")
+//        _ = try? Data(contentsOf: url!)
+        
+        do {
+
+//            let path = Bundle.main.path(forResource: "data", ofType: "json")
+//            var data: NSData
+//            let jsonResult:AnyObject
+//            do {
+//                data = try NSData(contentsOfFile: path!)
+//                jsonResult = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
+//            } catch {
+//                fatalError("Error in reading data.")
+//            }
             
+            // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+            if let nsDictionaryObject = jsonResult as? NSDictionary {
+                if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                    print(swiftDictionary)
+                }
+            }
+            else if let nsArrayObject = jsonResult as? NSArray {
+                if let swiftArray = nsArrayObject as Array? {
+                    print(swiftArray)
+                }
+            }
+            
+            let jsonArray = jsonResult["house"] as! NSArray
             for json in jsonArray {
-                let house = NSEntityDescription.insertNewObjectForEntityForName("House", inManagedObjectContext: coreData.managedObjectContext) as! House
-                house.bgy = json["bgy"] as? String
-                house.price = json["price"] as? NSNumber
-                house.bed = json["bed"] as? NSNumber
-                house.bath = json["bath"] as? NSNumber
-                house.sqrm = json["sqrm"] as? NSNumber
                 
-                let category = NSEntityDescription.insertNewObjectForEntityForName("Category", inManagedObjectContext: coreData.managedObjectContext) as! Category
-                category.houseType = (json["category"] as! NSDictionary)["houseType"] as? String
+                let house = NSEntityDescription.insertNewObject(forEntityName: "House", into: coreData.managedObjectContext) as! House
+                
+                let houseMap = json as! NSDictionary
+                
+                house.bgy = houseMap["bgy"] as? String
+                house.price = houseMap["price"] as? NSNumber
+                house.bed = houseMap["bed"] as? NSNumber
+                house.bath = houseMap["bath"] as? NSNumber
+                house.sqrm = houseMap["sqrm"] as? NSNumber
+                
+                let category = NSEntityDescription.insertNewObject(forEntityName: "Category", into: coreData.managedObjectContext) as! Category
+                category.houseType = (houseMap["category"] as! NSDictionary)["houseType"] as? String
                 house.category = category
                 
-                let status = NSEntityDescription.insertNewObjectForEntityForName("Status", inManagedObjectContext: coreData.managedObjectContext) as! Status
-                let isForSale = (json["status"] as! NSDictionary)["isForRent"] as! Bool
-                status.isForSale = NSNumber(bool: isForSale)
+                let status = NSEntityDescription.insertNewObject(forEntityName: "Status", into: coreData.managedObjectContext) as! Status
+                let isForSale = (houseMap["status"] as! NSDictionary)["isForRent"] as! Bool
+                status.isForSale = NSNumber(value: isForSale as Bool)
                 house.status = status
                 
-                let location = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext: coreData.managedObjectContext) as! Location
-                location.city = json["city"] as? String
+                let location = NSEntityDescription.insertNewObject(forEntityName: "Location", into: coreData.managedObjectContext) as! Location
+                location.city = houseMap["city"] as? String
                 house.location = location
                 
-                let imageName = json["image"] as? String
+                let imageName = houseMap["image"] as? String
                 let image = UIImage(named: imageName!)
                 let imageData = UIImageJPEGRepresentation(image!, 1.0)
                 house.image = imageData
             }
             coreData.saveContext()
             
-            let request = NSFetchRequest(entityName: "House")
-            let houseCount = coreData.managedObjectContext.countForFetchRequest(request, error: nil)
-            
+            let request = NSFetchRequest<House>(entityName: "House")
+            let houseCount = try coreData.managedObjectContext.count(for: request)
             print("Total house: \(houseCount)")
         } catch {
             fatalError("Error in reading data.")

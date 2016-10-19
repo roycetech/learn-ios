@@ -39,11 +39,13 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadData() {
-        let request = NSFetchRequest(entityName: "House")
-        request.predicate = NSPredicate(format: "status.isForSale = %@", isForSale)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "House")
+        
+        request.predicate = NSPredicate(format: "status.isForSale = %@", isForSale as CVarArg)
         
         do {
-            houses = try managedObjectContext.executeFetchRequest(request) as! [House]
+            houses = try managedObjectContext.fetch(request) as! [House]
             tableView.reloadData()
         } catch {
             fatalError("Failed in retrieving list of houses by status!")
@@ -51,29 +53,29 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return houses.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCellWithIdentifier("houseCell") as! HouseListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "houseCell") as! HouseListTableViewCell
         
-        let house = houses[indexPath.row]
-        cell.bathLabel.text = String(house.bath)
+        let house = houses[(indexPath as NSIndexPath).row]
+        cell.bathLabel.text = String(describing: house.bath)
         cell.bedLabel.text = house.bed?.stringValue
         cell.categoryLabel.text = house.category?.houseType
         cell.cityLabel.text = house.location?.city
         
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .CurrencyStyle
-        cell.priceLabel.text = numberFormatter.stringFromNumber(house.price!)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        cell.priceLabel.text = numberFormatter.string(from: house.price!)
         
-        let image = UIImage(data: house.image!)
+        let image = UIImage(data: house.image! as Data)
         cell.houseImageView.image = image
         cell.houseImageView.layer.borderWidth = 1
         cell.houseImageView.layer.cornerRadius = 4
@@ -82,8 +84,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     
-    @IBAction func segmentedAction(sender: UISegmentedControl) {
-        let selectedValue = sender.titleForSegmentAtIndex(sender.selectedSegmentIndex)
+    @IBAction func segmentedAction(_ sender: UISegmentedControl) {
+        let selectedValue = sender.titleForSegment(at: sender.selectedSegmentIndex)
         isForSale = selectedValue == "For Rent"
         loadData()
     }
