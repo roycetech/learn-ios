@@ -1,7 +1,5 @@
 /** Everything is public in order to be accessed in the playground which is treated like a separate module by the compiler.  */
 
-import Foundation
-
 public class EquilateralTriangle: NamedShape {
     
     public var sideLength: Double = 0.0

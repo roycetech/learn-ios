@@ -15,9 +15,7 @@ class ViewController: UIViewController {
         
         print("Program Start.")
         
-        let bundle = Bundle.main
-        let path = bundle.path(forResource: "sample", ofType: "json")
-        
+        let path = Bundle.main.path(forResource: "sample", ofType: "json")
         var data:NSData
         let json:AnyObject
         
@@ -31,15 +29,11 @@ class ViewController: UIViewController {
         if let nsDictionaryObject = json as? NSDictionary {
             print("It is a dictionary")
             
-            if let swiftDictionary = nsDictionaryObject as Dictionary? {
-                print(swiftDictionary)
-            }
-        }
-        else if let nsArrayObject = json as? NSArray {
-            print("It is an Array")
-
-            if let swiftArray = nsArrayObject as Array? {
-                print(swiftArray)
+            if let swiftDictionary = nsDictionaryObject as NSDictionary? {
+                // print(swiftDictionary)
+                let array = swiftDictionary["house"] as! NSArray
+                
+                print(type(of: array[0]))
             }
         }
         

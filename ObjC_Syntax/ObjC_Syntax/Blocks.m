@@ -13,10 +13,12 @@ void blocks() {
   // Declare an uninitialized block.
   void (^block1)(void);
 
+    
   // Declare and initialize a block, square functionality.
   float (^block2)(float) = ^(float x) {
     return x * x;
   };
+    
   
   float (^square)(float) = ^(float x) {
     return x * x;

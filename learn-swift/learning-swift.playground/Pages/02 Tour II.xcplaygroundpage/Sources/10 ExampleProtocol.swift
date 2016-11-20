@@ -1,6 +1,7 @@
-import Foundation
-
 public protocol ExampleProtocol {
+    
     var simpleDescription: String { get }
-    func adjust()
+    
+    mutating func adjust()
+
 }

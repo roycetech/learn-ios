@@ -12,6 +12,8 @@
 		F106CCC21DACC9D500333B67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F106CCC01DACC9D500333B67 /* Main.storyboard */; };
 		F106CCC41DACC9D500333B67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F106CCC31DACC9D500333B67 /* Assets.xcassets */; };
 		F106CCC71DACC9D500333B67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F106CCC51DACC9D500333B67 /* LaunchScreen.storyboard */; };
+		F106CCCF1DACCA2E00333B67 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = F106CCCE1DACCA2E00333B67 /* sample.json */; };
+		F106CCD21DACCCE000333B67 /* hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106CCD11DACCCE000333B67 /* hash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		F106CCC31DACC9D500333B67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F106CCC61DACC9D500333B67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F106CCC81DACC9D500333B67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F106CCCE1DACCA2E00333B67 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		F106CCD11DACCCE000333B67 /* hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		F106CCBB1DACC9D500333B67 /* learn-swift */ = {
 			isa = PBXGroup;
 			children = (
+				F106CCD01DACCCC400333B67 /* collections */,
+				F106CCCE1DACCA2E00333B67 /* sample.json */,
 				F106CCBC1DACC9D500333B67 /* AppDelegate.swift */,
 				F106CCBE1DACC9D500333B67 /* ViewController.swift */,
 				F106CCC01DACC9D500333B67 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				F106CCC81DACC9D500333B67 /* Info.plist */,
 			);
 			path = "learn-swift";
+			sourceTree = "<group>";
+		};
+		F106CCD01DACCCC400333B67 /* collections */ = {
+			isa = PBXGroup;
+			children = (
+				F106CCD11DACCCE000333B67 /* hash.swift */,
+			);
+			name = collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F106CCC71DACC9D500333B67 /* LaunchScreen.storyboard in Resources */,
+				F106CCCF1DACCA2E00333B67 /* sample.json in Resources */,
 				F106CCC41DACC9D500333B67 /* Assets.xcassets in Resources */,
 				F106CCC21DACC9D500333B67 /* Main.storyboard in Resources */,
 			);
@@ -137,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F106CCBF1DACC9D500333B67 /* ViewController.swift in Sources */,
+				F106CCD21DACCCE000333B67 /* hash.swift in Sources */,
 				F106CCBD1DACC9D500333B67 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

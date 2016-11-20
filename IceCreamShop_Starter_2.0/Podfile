@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '10'
+
+
+target 'IceCreamShop' do
+  use_frameworks!
+
+  pod 'Firebase'
+  pod 'RNMoVali', '2.0'
+  # pod 'RNMoVali'
+end
+

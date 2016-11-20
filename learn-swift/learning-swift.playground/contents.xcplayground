@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios'>
     <pages>
-        <page name='01 basic'/>
-        <page name='02 test'/>
-        <page name='Untitled Page'/>
+        <page name='01 Tour I'/>
+        <page name='02 Tour II'/>
+        <page name='Dates'/>
+        <page name='Strings'/>
+        <page name='DateFormatting'/>
+        <page name='closures'/>
+        <page name='classes'/>
+        <page name='speech'/>
+        <page name='Numbers'/>
+        <page name='UIStepper'/>
     </pages>
 </playground>

@@ -73,22 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("Unable to read json file!")
         }
-
-//        
-//        let url = Bundle.main.url(forResource: "sample", withExtension: "json")
-//        _ = try? Data(contentsOf: url!)
         
         do {
-
-//            let path = Bundle.main.path(forResource: "data", ofType: "json")
-//            var data: NSData
-//            let jsonResult:AnyObject
-//            do {
-//                data = try NSData(contentsOfFile: path!)
-//                jsonResult = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject
-//            } catch {
-//                fatalError("Error in reading data.")
-//            }
             
             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
             if let nsDictionaryObject = jsonResult as? NSDictionary {

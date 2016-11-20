@@ -1,9 +1,14 @@
-//
-//  README.md
-//  TryIOS
-//
-//  Created by Royce on 15/10/2016.
-//  Copyright © 2016 Ryetech. All rights reserved.
-//
+Overview:
+---------
 
-import Foundation
+This project is from CodeSchool Try IOS
+
+
+Features:
+---------
+
+- Objective-C
+- IPhone only
+- Changing background color upon load
+- Responding to button tap events
+- Changing background color upon button tap

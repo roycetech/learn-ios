@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="myc-ZE-dfb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="SJb-Hw-cFX">
+            <objects>
+                <viewController id="myc-ZE-dfb" customClass="FirstViewController" customModule="Timer_Segue_Demo_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wye-yg-eAg"/>
+                        <viewControllerLayoutGuide type="bottom" id="m1G-0A-hfe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MDy-nq-xKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YG-QU-1ZG">
+                                <state key="normal" title="To View Two"/>
+                                <connections>
+                                    <segue destination="YNb-pb-dec" kind="show" id="yuM-yr-xzQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDr-nH-Ehi">
+                                <frame key="frameInset" minX="129" minY="356" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.1339164674282074" green="0.64541029930114746" blue="0.087629340589046478" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Timer"/>
+                                <connections>
+                                    <action selector="buttonStartTimerPressed:" destination="myc-ZE-dfb" eventType="touchUpInside" id="bK2-Qm-sR1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-JQ-RjJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HDr-nH-Ehi" firstAttribute="centerX" secondItem="MDy-nq-xKQ" secondAttribute="centerX" constant="-10" id="89z-CP-rDH"/>
+                            <constraint firstItem="4YG-QU-1ZG" firstAttribute="centerX" secondItem="MDy-nq-xKQ" secondAttribute="centerX" id="ASG-kk-2dv"/>
+                            <constraint firstItem="4YG-QU-1ZG" firstAttribute="centerY" secondItem="MDy-nq-xKQ" secondAttribute="centerY" id="IqK-SH-PFE"/>
+                            <constraint firstItem="4YG-QU-1ZG" firstAttribute="top" secondItem="Esy-JQ-RjJ" secondAttribute="bottom" constant="31" id="Vo9-8i-gb3"/>
+                            <constraint firstItem="Esy-JQ-RjJ" firstAttribute="centerX" secondItem="MDy-nq-xKQ" secondAttribute="centerX" id="YDU-lH-JUH"/>
+                            <constraint firstItem="HDr-nH-Ehi" firstAttribute="top" secondItem="4YG-QU-1ZG" secondAttribute="bottom" constant="8" id="zGK-eU-2Zl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelCounter" destination="Esy-JQ-RjJ" id="a86-pJ-mQt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JN8-04-iUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.5999999999999996" y="-45.42728635682159"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="dUP-Ut-XPK">
+            <objects>
+                <viewController id="YNb-pb-dec" customClass="SecondViewController" customModule="Timer_Segue_Demo_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jU4-Kh-ThV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ip4-lk-2AM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JyI-K6-a3H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6z8-4K-2wf">
+                                <state key="normal" title="To View One"/>
+                                <connections>
+                                    <segue destination="myc-ZE-dfb" kind="show" id="oc4-c0-s8o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6z8-4K-2wf" firstAttribute="centerY" secondItem="JyI-K6-a3H" secondAttribute="centerY" id="UyU-gY-cCz"/>
+                            <constraint firstItem="6z8-4K-2wf" firstAttribute="centerX" secondItem="JyI-K6-a3H" secondAttribute="centerX" id="u3E-do-Cl6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Kz-8A-5SX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="775" y="-45"/>
+        </scene>
+    </scenes>
+</document>
