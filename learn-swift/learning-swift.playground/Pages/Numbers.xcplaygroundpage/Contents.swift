@@ -1,3 +1,6 @@
+import UIKit
+
+
 func formatSet(weight: Float, reps: Int) -> String {
     var formatted = ""
     var pWeight = weight as Float
@@ -26,3 +29,7 @@ formatSet(weight: 102.5, reps: 12)
 100.5.divided(by: 1)
 
 0.0 > 0
+
+
+// Random Number between 0 and 5
+let random = arc4random_uniform(6)

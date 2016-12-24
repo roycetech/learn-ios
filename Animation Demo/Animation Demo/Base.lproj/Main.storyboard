@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animation_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVw-y9-ry2">
+                                <rect key="frame" x="134" y="28" width="107" height="30"/>
+                                <state key="normal" title="Start Animation"/>
+                                <connections>
+                                    <action selector="animateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Md0-PC-Bpn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame_0_delay-0.01s.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Hoo-Qd-vUG">
+                                <rect key="frame" x="16" y="66" width="343" height="237"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="M38-3u-t8K"/>
+                                    <constraint firstAttribute="width" secondItem="Hoo-Qd-vUG" secondAttribute="height" multiplier="343:237" id="mxA-xJ-jaS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fau-Vb-cwM">
+                                <rect key="frame" x="16" y="311" width="50" height="30"/>
+                                <state key="normal" title="Fade In"/>
+                                <connections>
+                                    <action selector="fadeInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PjF-G8-p3B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G6-tj-LB3">
+                                <rect key="frame" x="162" y="311" width="50" height="30"/>
+                                <state key="normal" title="Slide In"/>
+                                <connections>
+                                    <action selector="slideInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VUW-fd-x3R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMB-Yq-Opo">
+                                <rect key="frame" x="314" y="311" width="36" height="30"/>
+                                <state key="normal" title="Grow"/>
+                                <connections>
+                                    <action selector="growTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gNB-9L-1w8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pMB-Yq-Opo" secondAttribute="trailing" constant="9" id="6pe-7g-2dy"/>
+                            <constraint firstItem="pMB-Yq-Opo" firstAttribute="top" secondItem="Hoo-Qd-vUG" secondAttribute="bottom" constant="8" id="9Pt-Pd-qH7"/>
+                            <constraint firstItem="NVw-y9-ry2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="CGE-w8-61c"/>
+                            <constraint firstItem="8G6-tj-LB3" firstAttribute="top" secondItem="Hoo-Qd-vUG" secondAttribute="bottom" constant="8" id="Hz3-1q-ItI"/>
+                            <constraint firstItem="Hoo-Qd-vUG" firstAttribute="top" secondItem="NVw-y9-ry2" secondAttribute="bottom" constant="8" id="Wmm-sd-nxX"/>
+                            <constraint firstItem="8G6-tj-LB3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X3C-lo-PhL"/>
+                            <constraint firstItem="8G6-tj-LB3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="291" id="ZB1-wr-11I"/>
+                            <constraint firstItem="fau-Vb-cwM" firstAttribute="top" secondItem="Hoo-Qd-vUG" secondAttribute="bottom" constant="8" id="dI0-oo-3yR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Hoo-Qd-vUG" secondAttribute="leading" id="dcQ-hE-uSq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hoo-Qd-vUG" secondAttribute="trailing" id="hd0-da-YCO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="fau-Vb-cwM" secondAttribute="leading" id="kVP-PY-KiP"/>
+                            <constraint firstItem="NVw-y9-ry2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="piN-yf-Yit"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonAnimate" destination="NVw-y9-ry2" id="B7k-Pk-xic"/>
+                        <outlet property="image" destination="Hoo-Qd-vUG" id="XBv-jo-uSt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="frame_0_delay-0.01s.gif" width="1080" height="740"/>
+    </resources>
+</document>

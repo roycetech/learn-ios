@@ -11,5 +11,9 @@
         <page name='speech'/>
         <page name='Numbers'/>
         <page name='UIStepper'/>
+        <page name='Collections'/>
+        <page name='loop'/>
+        <page name='prime number'/>
+        <page name='enum'/>
     </pages>
 </playground>

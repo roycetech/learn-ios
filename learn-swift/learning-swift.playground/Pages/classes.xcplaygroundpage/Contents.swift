@@ -8,7 +8,6 @@ class Square {
     
 }
 
-
 /**
 let customSquare = Square() {
     override func draw() {
@@ -19,10 +18,8 @@ let customSquare = Square() {
 
 let square = Square()
 
-
 print(String(describing: type(of: square)))
 
 print(1)
-
 
 

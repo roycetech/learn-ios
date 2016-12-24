@@ -11,3 +11,30 @@ let secondPart = String(format: "%02d", seconds % 60)
 let minutePart = String(format: "%02d", seconds / 60)
 
 "\(minutePart):\(secondPart)"
+
+
+// Print each character in a string
+let hello = "Hello world"
+for char in hello.characters {
+    print(char)
+}
+
+// Substring
+//hello.substring(to: 3)
+
+let nsstring = NSString(string: "Hello NSString")
+nsstring.substring(to: 5)
+nsstring.substring(from: 5)
+nsstring.substring(with: NSRange(location: 3, length: 3))
+
+// Contains
+if nsstring.contains("lo") {
+    print("you")
+}
+
+// Split
+nsstring.components(separatedBy: " ")
+
+
+nsstring.uppercased
+nsstring.lowercased
