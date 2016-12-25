@@ -7,29 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F179CB521E0EA7F9006B147D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB511E0EA7F9006B147D /* AppDelegate.swift */; };
-		F179CB541E0EA7F9006B147D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB531E0EA7F9006B147D /* ViewController.swift */; };
-		F179CB571E0EA7F9006B147D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CB551E0EA7F9006B147D /* Main.storyboard */; };
-		F179CB591E0EA7F9006B147D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F179CB581E0EA7F9006B147D /* Assets.xcassets */; };
-		F179CB5C1E0EA7F9006B147D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CB5A1E0EA7F9006B147D /* LaunchScreen.storyboard */; };
-		F179CB641E0EAB66006B147D /* background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F179CB631E0EAB66006B147D /* background.jpeg */; };
-		F179CB681E0EAE18006B147D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB671E0EAE18006B147D /* Config.swift */; };
+		F179CBA11E0FE859006B147D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CBA01E0FE859006B147D /* AppDelegate.swift */; };
+		F179CBA31E0FE859006B147D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CBA21E0FE859006B147D /* ViewController.swift */; };
+		F179CBA61E0FE859006B147D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CBA41E0FE859006B147D /* Main.storyboard */; };
+		F179CBA81E0FE859006B147D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F179CBA71E0FE859006B147D /* Assets.xcassets */; };
+		F179CBAB1E0FE859006B147D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CBA91E0FE859006B147D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F179CB4E1E0EA7F9006B147D /* API Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "API Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F179CB511E0EA7F9006B147D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F179CB531E0EA7F9006B147D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F179CB561E0EA7F9006B147D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F179CB581E0EA7F9006B147D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F179CB5B1E0EA7F9006B147D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F179CB5D1E0EA7F9006B147D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F179CB631E0EAB66006B147D /* background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpeg; sourceTree = "<group>"; };
-		F179CB671E0EAE18006B147D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F179CB9D1E0FE859006B147D /* Cocoapods Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cocoapods Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F179CBA01E0FE859006B147D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F179CBA21E0FE859006B147D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F179CBA51E0FE859006B147D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F179CBA71E0FE859006B147D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F179CBAA1E0FE859006B147D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F179CBAC1E0FE859006B147D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F179CB4B1E0EA7F9006B147D /* Frameworks */ = {
+		F179CB9A1E0FE859006B147D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,74 +35,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F179CB451E0EA7F9006B147D = {
+		F179CB941E0FE859006B147D = {
 			isa = PBXGroup;
 			children = (
-				F179CB501E0EA7F9006B147D /* API Demo */,
-				F179CB4F1E0EA7F9006B147D /* Products */,
+				F179CB9F1E0FE859006B147D /* Cocoapods Demo */,
+				F179CB9E1E0FE859006B147D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F179CB4F1E0EA7F9006B147D /* Products */ = {
+		F179CB9E1E0FE859006B147D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F179CB4E1E0EA7F9006B147D /* API Demo.app */,
+				F179CB9D1E0FE859006B147D /* Cocoapods Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F179CB501E0EA7F9006B147D /* API Demo */ = {
+		F179CB9F1E0FE859006B147D /* Cocoapods Demo */ = {
 			isa = PBXGroup;
 			children = (
-				F179CB511E0EA7F9006B147D /* AppDelegate.swift */,
-				F179CB631E0EAB66006B147D /* background.jpeg */,
-				F179CB531E0EA7F9006B147D /* ViewController.swift */,
-				F179CB551E0EA7F9006B147D /* Main.storyboard */,
-				F179CB581E0EA7F9006B147D /* Assets.xcassets */,
-				F179CB5A1E0EA7F9006B147D /* LaunchScreen.storyboard */,
-				F179CB5D1E0EA7F9006B147D /* Info.plist */,
-				F179CB671E0EAE18006B147D /* Config.swift */,
+				F179CBA01E0FE859006B147D /* AppDelegate.swift */,
+				F179CBA21E0FE859006B147D /* ViewController.swift */,
+				F179CBA41E0FE859006B147D /* Main.storyboard */,
+				F179CBA71E0FE859006B147D /* Assets.xcassets */,
+				F179CBA91E0FE859006B147D /* LaunchScreen.storyboard */,
+				F179CBAC1E0FE859006B147D /* Info.plist */,
 			);
-			path = "API Demo";
+			path = "Cocoapods Demo";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F179CB4D1E0EA7F9006B147D /* API Demo */ = {
+		F179CB9C1E0FE859006B147D /* Cocoapods Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F179CB601E0EA7F9006B147D /* Build configuration list for PBXNativeTarget "API Demo" */;
+			buildConfigurationList = F179CBAF1E0FE859006B147D /* Build configuration list for PBXNativeTarget "Cocoapods Demo" */;
 			buildPhases = (
-				F179CB4A1E0EA7F9006B147D /* Sources */,
-				F179CB4B1E0EA7F9006B147D /* Frameworks */,
-				F179CB4C1E0EA7F9006B147D /* Resources */,
+				F179CB991E0FE859006B147D /* Sources */,
+				F179CB9A1E0FE859006B147D /* Frameworks */,
+				F179CB9B1E0FE859006B147D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "API Demo";
-			productName = "API Demo";
-			productReference = F179CB4E1E0EA7F9006B147D /* API Demo.app */;
+			name = "Cocoapods Demo";
+			productName = "Cocoapods Demo";
+			productReference = F179CB9D1E0FE859006B147D /* Cocoapods Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F179CB461E0EA7F9006B147D /* Project object */ = {
+		F179CB951E0FE859006B147D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Ryetech;
 				TargetAttributes = {
-					F179CB4D1E0EA7F9006B147D = {
+					F179CB9C1E0FE859006B147D = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F179CB491E0EA7F9006B147D /* Build configuration list for PBXProject "API Demo" */;
+			buildConfigurationList = F179CB981E0FE859006B147D /* Build configuration list for PBXProject "Cocoapods Demo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -114,56 +108,54 @@
 				en,
 				Base,
 			);
-			mainGroup = F179CB451E0EA7F9006B147D;
-			productRefGroup = F179CB4F1E0EA7F9006B147D /* Products */;
+			mainGroup = F179CB941E0FE859006B147D;
+			productRefGroup = F179CB9E1E0FE859006B147D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F179CB4D1E0EA7F9006B147D /* API Demo */,
+				F179CB9C1E0FE859006B147D /* Cocoapods Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F179CB4C1E0EA7F9006B147D /* Resources */ = {
+		F179CB9B1E0FE859006B147D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F179CB5C1E0EA7F9006B147D /* LaunchScreen.storyboard in Resources */,
-				F179CB591E0EA7F9006B147D /* Assets.xcassets in Resources */,
-				F179CB571E0EA7F9006B147D /* Main.storyboard in Resources */,
-				F179CB641E0EAB66006B147D /* background.jpeg in Resources */,
+				F179CBAB1E0FE859006B147D /* LaunchScreen.storyboard in Resources */,
+				F179CBA81E0FE859006B147D /* Assets.xcassets in Resources */,
+				F179CBA61E0FE859006B147D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F179CB4A1E0EA7F9006B147D /* Sources */ = {
+		F179CB991E0FE859006B147D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F179CB541E0EA7F9006B147D /* ViewController.swift in Sources */,
-				F179CB521E0EA7F9006B147D /* AppDelegate.swift in Sources */,
-				F179CB681E0EAE18006B147D /* Config.swift in Sources */,
+				F179CBA31E0FE859006B147D /* ViewController.swift in Sources */,
+				F179CBA11E0FE859006B147D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F179CB551E0EA7F9006B147D /* Main.storyboard */ = {
+		F179CBA41E0FE859006B147D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F179CB561E0EA7F9006B147D /* Base */,
+				F179CBA51E0FE859006B147D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F179CB5A1E0EA7F9006B147D /* LaunchScreen.storyboard */ = {
+		F179CBA91E0FE859006B147D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F179CB5B1E0EA7F9006B147D /* Base */,
+				F179CBAA1E0FE859006B147D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -171,7 +163,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F179CB5E1E0EA7F9006B147D /* Debug */ = {
+		F179CBAD1E0FE859006B147D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -220,7 +212,7 @@
 			};
 			name = Debug;
 		};
-		F179CB5F1E0EA7F9006B147D /* Release */ = {
+		F179CBAE1E0FE859006B147D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,25 +254,25 @@
 			};
 			name = Release;
 		};
-		F179CB611E0EA7F9006B147D /* Debug */ = {
+		F179CBB01E0FE859006B147D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "API Demo/Info.plist";
+				INFOPLIST_FILE = "Cocoapods Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ryetech.API-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ryetech.Cocoapods-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		F179CB621E0EA7F9006B147D /* Release */ = {
+		F179CBB11E0FE859006B147D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "API Demo/Info.plist";
+				INFOPLIST_FILE = "Cocoapods Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ryetech.API-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.ryetech.Cocoapods-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -289,24 +281,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F179CB491E0EA7F9006B147D /* Build configuration list for PBXProject "API Demo" */ = {
+		F179CB981E0FE859006B147D /* Build configuration list for PBXProject "Cocoapods Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F179CB5E1E0EA7F9006B147D /* Debug */,
-				F179CB5F1E0EA7F9006B147D /* Release */,
+				F179CBAD1E0FE859006B147D /* Debug */,
+				F179CBAE1E0FE859006B147D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F179CB601E0EA7F9006B147D /* Build configuration list for PBXNativeTarget "API Demo" */ = {
+		F179CBAF1E0FE859006B147D /* Build configuration list for PBXNativeTarget "Cocoapods Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F179CB611E0EA7F9006B147D /* Debug */,
-				F179CB621E0EA7F9006B147D /* Release */,
+				F179CBB01E0FE859006B147D /* Debug */,
+				F179CBB11E0FE859006B147D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F179CB461E0EA7F9006B147D /* Project object */;
+	rootObject = F179CB951E0FE859006B147D /* Project object */;
 }
