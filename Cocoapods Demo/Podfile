@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '10.0'
+
+target 'Cocoapods Demo' do
+  use_frameworks!
+
+  pod 'Alamofire', '4.2.0'
+
+  # Pods for Cocoapods Demo
+
+end

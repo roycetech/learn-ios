@@ -10,36 +10,27 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var webView: UIWebView!
 
     func configureView() {
-        // Update the user interface for the detail item.
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.timestamp!.description
+            self.title = detail.title
+            if let blogWebView = self.webView, let content = detail.content {
+                blogWebView.loadHTMLString(content, baseURL: nil)
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     var detailItem: Event? {
         didSet {
-            // Update the view.
             self.configureView()
         }
     }
-
 
 }
 

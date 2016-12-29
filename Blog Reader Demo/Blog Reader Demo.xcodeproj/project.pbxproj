@@ -14,6 +14,10 @@
 		F179CB801E0EB2BD006B147D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CB7E1E0EB2BD006B147D /* Main.storyboard */; };
 		F179CB821E0EB2BD006B147D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F179CB811E0EB2BD006B147D /* Assets.xcassets */; };
 		F179CB851E0EB2BD006B147D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F179CB831E0EB2BD006B147D /* LaunchScreen.storyboard */; };
+		F179CB8D1E0EB6BB006B147D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB8C1E0EB6BB006B147D /* Config.swift */; };
+		F179CB901E0F6F73006B147D /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB8E1E0F6F73006B147D /* Event+CoreDataClass.swift */; };
+		F179CB911E0F6F73006B147D /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB8F1E0F6F73006B147D /* Event+CoreDataProperties.swift */; };
+		F179CB931E0F7D3C006B147D /* FetchedResultControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F179CB921E0F7D3C006B147D /* FetchedResultControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		F179CB811E0EB2BD006B147D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F179CB841E0EB2BD006B147D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F179CB861E0EB2BD006B147D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F179CB8C1E0EB6BB006B147D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F179CB8E1E0F6F73006B147D /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F179CB8F1E0F6F73006B147D /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F179CB921E0F7D3C006B147D /* FetchedResultControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +66,18 @@
 		F179CB741E0EB2BD006B147D /* Blog Reader Demo */ = {
 			isa = PBXGroup;
 			children = (
+				F179CB8E1E0F6F73006B147D /* Event+CoreDataClass.swift */,
+				F179CB8F1E0F6F73006B147D /* Event+CoreDataProperties.swift */,
 				F179CB751E0EB2BD006B147D /* AppDelegate.swift */,
 				F179CB7A1E0EB2BD006B147D /* MasterViewController.swift */,
 				F179CB7C1E0EB2BD006B147D /* DetailViewController.swift */,
+				F179CB921E0F7D3C006B147D /* FetchedResultControllerHelper.swift */,
 				F179CB7E1E0EB2BD006B147D /* Main.storyboard */,
 				F179CB811E0EB2BD006B147D /* Assets.xcassets */,
 				F179CB831E0EB2BD006B147D /* LaunchScreen.storyboard */,
 				F179CB861E0EB2BD006B147D /* Info.plist */,
 				F179CB771E0EB2BD006B147D /* Blog_Reader_Demo.xcdatamodeld */,
+				F179CB8C1E0EB6BB006B147D /* Config.swift */,
 			);
 			path = "Blog Reader Demo";
 			sourceTree = "<group>";
@@ -144,7 +156,11 @@
 			files = (
 				F179CB761E0EB2BD006B147D /* AppDelegate.swift in Sources */,
 				F179CB791E0EB2BD006B147D /* Blog_Reader_Demo.xcdatamodeld in Sources */,
+				F179CB8D1E0EB6BB006B147D /* Config.swift in Sources */,
+				F179CB911E0F6F73006B147D /* Event+CoreDataProperties.swift in Sources */,
+				F179CB931E0F7D3C006B147D /* FetchedResultControllerHelper.swift in Sources */,
 				F179CB7B1E0EB2BD006B147D /* MasterViewController.swift in Sources */,
+				F179CB901E0F6F73006B147D /* Event+CoreDataClass.swift in Sources */,
 				F179CB7D1E0EB2BD006B147D /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
